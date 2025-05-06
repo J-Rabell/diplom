@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+        <variable
+            name="SelectedQuestionViewModel"
+            type="com.example.questionnaire_v3.ui.selectedQuestion.SelectedQuestionViewModel" />
+
+    </data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/drawable_background_gradient"
+    tools:context=".ui.selectedQuestion.SelectedQuestionFragment">
+
+   <!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="8dp"
+        android:background="@drawable/rounded_corners">
+        <ImageView
+            android:id="@+id/roundedImageView"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img2"
+            android:layout_gravity="center"
+            android:background="@color/white" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="8dp"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_corners_white"
+                android:layout_marginVertical="8dp">
+
+                <TextView
+                    android:id="@+id/item_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="Таня"
+                    android:paddingLeft="12dp"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:clickable="true"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+                <TextView
+                    android:id="@+id/item_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Окружающий мир"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:layout_marginStart="15dp" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+                <TextView
+                    android:id="@+id/item_created_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="15dp"
+                    android:text="05.06.2023"
+                    android:textColor="@color/black"
+                    android:paddingRight="12dp"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+           <LinearLayout
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="@drawable/rounded_corners_white"
+               android:orientation="vertical">
+               <TextView
+                   android:id="@+id/selected_question_question"
+                   android:layout_marginTop="10dip"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+
+                   android:textSize="24dp"
+                   android:paddingHorizontal="12dp"
+                   android:textColor="@color/black"
+
+                   android:text="Какая пора года вам нравится больше всего?" />
+
+               <TextView
+                   android:id="@+id/selected_questiin_description"
+                   android:layout_marginTop="10dp"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:textSize="18dp"
+                   android:paddingHorizontal="12dp"
+                   android:paddingBottom="12dp"
+                   android:textColor="@color/black"
+                   android:text="Мне нравится весна... \nЗиму не люблю" />
+
+
+           </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/selected_question_answer_1"
+                android:layout_marginTop="10dip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:text="0 / Лето"
+                android:padding="12dp"
+
+                android:background="@drawable/rounded_corners_white"
+                android:clickable="true"/>
+            <TextView
+                android:id="@+id/selected_question_answer_2"
+                android:layout_marginTop="10dip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:text="0 / Зима"
+                android:padding="12dp"
+                android:background="@drawable/rounded_corners_white"
+                android:clickable="true"/>
+            <TextView
+                android:id="@+id/selected_question_answer_3"
+                android:layout_marginTop="10dip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:text="0 / Осень"
+                android:padding="12dp"
+                android:background="@drawable/rounded_corners_white"
+                android:visibility="visible"
+                android:clickable="true"/>
+            <TextView
+                android:id="@+id/selected_question_answer_4"
+                android:layout_marginTop="10dip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:text="0 / Весна"
+                android:padding="12dp"
+                android:background="@drawable/rounded_corners_white"
+                android:visibility="visible"
+                android:clickable="true"/>
+            <TextView
+                android:id="@+id/selected_question_answer_5"
+                android:layout_marginTop="10dip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:text="0 / Все-равно какая пора года"
+                android:padding="12dp"
+                android:background="@drawable/rounded_corners_white"
+                android:visibility="visible"
+                android:clickable="true"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginVertical="8dp"
+                android:layout_marginHorizontal="12dp">
+
+                <ImageButton
+                    android:id="@+id/btn_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="40dp"
+                    android:minWidth="40dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_comment"
+                    android:background="@drawable/rounded_corners" />
+
+                <ImageButton
+                    android:id="@+id/btn_analytics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="40dp"
+                    android:minWidth="40dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_analitics"
+                    android:visibility="visible"
+                    android:background="@drawable/rounded_corners" />
+                <ImageButton
+                    android:id="@+id/btn_edit_question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="40dp"
+                    android:minWidth="40dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_change_account"
+                    android:visibility="visible"
+                    android:background="@drawable/rounded_corners" />
+                <ImageButton
+                    android:id="@+id/btn_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="40dp"
+                    android:minWidth="40dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_delete"
+                    android:visibility="visible"
+                    android:background="@drawable/rounded_corners" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+                <TextView
+                    android:id="@+id/selected_question_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="24dp"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+                <ImageButton
+                    android:id="@+id/btn_like_question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="40dp"
+                    android:minWidth="40dp"
+                    android:background="@drawable/ic_like"
+                    android:alpha="0.5"
+                    />
+
+                <ImageButton
+                    android:id="@+id/btn_dislike_question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="40dp"
+                    android:minWidth="40dp"
+                    android:background="@drawable/ic_dislike"
+                    android:alpha="0.5"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout> -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="8dp"
+        android:background="@drawable/rounded_corners">
+        <ImageView
+            android:id="@+id/roundedImageView"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cat"
+            android:layout_gravity="center"
+            android:background="@color/white" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="8dp"
+            android:orientation="vertical"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_corners_white"
+                android:layout_marginVertical="8dp">
+
+                <TextView
+                    android:id="@+id/item_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:text="ID 6 Куро"
+                    android:paddingLeft="6dp"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"
+                    android:clickable="true"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+                <TextView
+                    android:id="@+id/item_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Животные"
+                    android:textColor="@color/black"
+                    android:textSize="14dp"
+                    android:layout_marginStart="15dp" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+                <TextView
+                    android:id="@+id/item_created_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="15dp"
+                    android:text="05.06.2023"
+                    android:textColor="@color/black"
+                    android:paddingRight="12dp"
+                    android:textSize="14dp" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_corners_white"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/selected_question_question"
+                    android:layout_marginTop="10dip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="24dp"
+                    android:paddingHorizontal="12dp"
+                    android:textColor="@color/black"
+
+                    android:text="Любите больше кошек или собак?" />
+
+                <TextView
+                    android:id="@+id/selected_questiin_description"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:paddingHorizontal="12dp"
+                    android:paddingBottom="12dp"
+                    android:textColor="@color/black"
+                    android:text="С подругой спор, проголосуйте, пожалуйста :)" />
+
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/selected_question_answer_1"
+                android:layout_marginTop="10dip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/purple_700"
+                android:textStyle="bold"
+                android:text="1 / Кошек"
+                android:padding="12dp"
+
+                android:background="@drawable/rounded_corners_white"
+                android:clickable="true"/>
+            <TextView
+                android:id="@+id/selected_question_answer_2"
+                android:layout_marginTop="10dip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:text="0 / Собак"
+                android:padding="12dp"
+                android:background="@drawable/rounded_corners_white"
+                android:clickable="true"/>
+            <TextView
+                android:id="@+id/selected_question_answer_3"
+                android:layout_marginTop="10dip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:text="0 / Осень"
+                android:padding="12dp"
+                android:background="@drawable/rounded_corners_white"
+                android:visibility="gone"
+                android:clickable="true"/>
+            <TextView
+                android:id="@+id/selected_question_answer_4"
+                android:layout_marginTop="10dip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:text="0 / Весна"
+                android:padding="12dp"
+                android:background="@drawable/rounded_corners_white"
+                android:visibility="gone"
+                android:clickable="true"/>
+            <TextView
+                android:id="@+id/selected_question_answer_5"
+                android:layout_marginTop="10dip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:textColor="@color/black"
+                android:text="0 / Все-равно какая пора года"
+                android:padding="12dp"
+                android:background="@drawable/rounded_corners_white"
+                android:visibility="gone"
+                android:clickable="true"/>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginVertical="8dp"
+                android:layout_marginHorizontal="12dp">
+
+                <ImageButton
+                    android:id="@+id/btn_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="40dp"
+                    android:minWidth="40dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_comment"
+                    android:background="@drawable/rounded_corners" />
+
+                <ImageButton
+                    android:id="@+id/btn_analytics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="40dp"
+                    android:minWidth="40dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_analitics"
+                    android:visibility="visible"
+                    android:background="@drawable/rounded_corners" />
+                <ImageButton
+                    android:id="@+id/btn_edit_question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="40dp"
+                    android:minWidth="40dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_change_account"
+                    android:visibility="visible"
+                    android:background="@drawable/rounded_corners" />
+                <ImageButton
+                    android:id="@+id/btn_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="40dp"
+                    android:minWidth="40dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_delete"
+                    android:visibility="visible"
+                    android:background="@drawable/rounded_corners" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+                <TextView
+                    android:id="@+id/selected_question_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="1"
+                    android:textColor="@color/black"
+                    android:textSize="24dp"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+                <ImageButton
+                    android:id="@+id/btn_like_question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="40dp"
+                    android:minWidth="40dp"
+                    android:background="@drawable/ic_like"
+                    android:alpha="1"
+                    />
+
+                <ImageButton
+                    android:id="@+id/btn_dislike_question"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="40dp"
+                    android:minWidth="40dp"
+                    android:background="@drawable/ic_dislike"
+                    android:alpha="0.5"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
+</layout>

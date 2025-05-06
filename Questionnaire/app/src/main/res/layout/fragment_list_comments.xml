@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:background="@drawable/drawable_background_gradient"
+    android:id="@+id/fragment_list_comments"
+    tools:context=".ui.commentaries.FragmentCommentaries">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:layout_marginHorizontal="8dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+            <EditText
+                android:id="@+id/list_commentaries_comment_text"
+                android:layout_width="300dp"
+                android:layout_height="120dp"
+                android:inputType="textMultiLine"
+                android:hint="Комментарий..."
+                android:background="@drawable/rounded_corners_white"
+                android:padding="12dp"
+                android:maxLength="255"/>
+
+            <ImageButton
+                android:id="@+id/btn_add_comment"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitCenter"
+                android:layout_marginHorizontal="12dp"
+                android:visibility="visible"
+                android:background="@drawable/button_rounded_corners"
+                android:src="@drawable/ic_add_comment"/>
+
+        <ImageButton
+            android:id="@+id/btn_save_comment"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="fitCenter"
+            android:layout_marginHorizontal="12dp"
+            android:visibility="gone"
+            android:background="@drawable/button_rounded_corners"
+            android:src="@drawable/ic_save_changes"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/loading_comments"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="gone">
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/purple_700" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/linear_new_achievement_comm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="12dp"
+            android:visibility="gone"
+            android:background="@drawable/rounded_corners_white">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="20dp">
+                    <ImageView
+                        android:id="@+id/achievement_icon"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_comment"
+                        android:background="@color/teal_200" />
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_margin="8dp"
+
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/achievement_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:text="Первый комментарий!"
+                        android:ellipsize="end"
+                        android:maxLines="4"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"/>
+                    <TextView
+                        android:id="@+id/achievement_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14dp"
+                        android:text="Оставьте свой первый комментарий"
+                        android:ellipsize="end"
+                        android:maxLines="4"
+                        android:layout_gravity="center"
+                        android:textColor="@color/black"/>
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/linear_my_comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corners_white"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:focusable="true"
+            android:clickable="true"
+            android:visibility="gone"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_marginBottom="5dp">
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/button_rounded_corners_comment">
+                <TextView
+                    android:id="@+id/comment_nickname1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Таня"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:layout_marginStart="15dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="05.06.2023"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:layout_marginStart="15dp" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+                <ImageButton
+                    android:id="@+id/btn_comment_delete1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="20dp"
+                    android:minWidth="20dp"
+
+                    android:background="@drawable/ic_close_white"
+                    android:visibility="visible"
+                    android:alpha="1" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/comment_answer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop = "8dp"
+                android:paddingHorizontal="8dp"
+                android:maxLines="2"
+                android:textSize="14dp"
+                android:text="Кошек"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/comment_text_my"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24dp"
+                    android:text="Мне нравятся кошки своим своенравием"
+                    android:textColor="@color/black"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:layout_gravity="left"
+                    android:layout_marginTop = "8dp"
+                    android:paddingHorizontal="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginHorizontal="12dp">
+
+                    <TextView
+                        android:id="@+id/comment_rating1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="0"
+                        android:textColor="@color/black"
+                        android:textSize="24dp"
+                        android:layout_marginStart="15dp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+                    <ImageButton
+                        android:id="@+id/btn_edit_comment_my"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minHeight="30dp"
+                        android:minWidth="30dp"
+                        android:visibility="visible"
+                        android:background="@drawable/ic_change_account"
+                        android:alpha="1" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.3" />
+                    <ImageButton
+                        android:id="@+id/btn_like"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minHeight="30dp"
+                        android:minWidth="30dp"
+                        android:background="@drawable/ic_like"
+                        android:alpha="0.5" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.2" />
+                    <ImageButton
+                        android:id="@+id/btn_dislike"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minHeight="30dp"
+                        android:minWidth="30dp"
+                        android:background="@drawable/ic_dislike"
+                        android:alpha="0.5"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!-- <ImageView
+                 android:id="@+id/likedImageView"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginEnd="15dp"
+                 android:src="@drawable/ic_change_account"/>
+
+             <ImageView
+                 android:id="@+id/more"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:src="@drawable/ic_menu_camera" />-->
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corners_white"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:focusable="true"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_marginBottom="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="@drawable/button_rounded_corners_comment">
+                <TextView
+                    android:id="@+id/comment_nickname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="XRabell"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:layout_marginStart="15dp" />
+
+                <TextView
+                    android:id="@+id/comment_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="05.06.2023"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    android:layout_marginStart="15dp" />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+                <ImageButton
+                    android:id="@+id/btn_comment_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="20dp"
+                    android:minWidth="20dp"
+
+                    android:background="@drawable/ic_close_white"
+                    android:visibility="visible"
+                    android:alpha="1" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/comment_answer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop = "8dp"
+                android:paddingHorizontal="8dp"
+                android:maxLines="2"
+                android:textSize="14dp"
+                android:text="Не выбрано"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/comment_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="24dp"
+                    android:text="Не хватает третьего варианта: никто не нравится."
+                    android:textColor="@color/black"
+                    android:ellipsize="end"
+                    android:maxLines="3"
+                    android:layout_gravity="left"
+                    android:layout_marginTop = "8dp"
+                    android:paddingHorizontal="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginVertical="8dp"
+                    android:layout_marginHorizontal="12dp">
+
+                    <TextView
+                        android:id="@+id/comment_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="-1"
+                        android:textColor="@color/black"
+                        android:textSize="24dp"
+                        android:layout_marginStart="15dp" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="1" />
+                    <ImageButton
+                        android:id="@+id/btn_edit_comment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minHeight="30dp"
+                        android:minWidth="30dp"
+                        android:visibility="visible"
+                        android:background="@drawable/ic_change_account"
+                        android:alpha="1" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.3" />
+                    <ImageButton
+                        android:id="@+id/btn_like_kuro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minHeight="30dp"
+                        android:minWidth="30dp"
+                        android:background="@drawable/ic_like"
+                        android:alpha="0.5" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_weight="0.2" />
+                    <ImageButton
+                        android:id="@+id/btn_dislike_kuro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minHeight="30dp"
+                        android:minWidth="30dp"
+                        android:background="@drawable/ic_dislike"
+                        android:alpha="1"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!-- <ImageView
+                 android:id="@+id/likedImageView"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginEnd="15dp"
+                 android:src="@drawable/ic_change_account"/>
+
+             <ImageView
+                 android:id="@+id/more"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:src="@drawable/ic_menu_camera" />-->
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="26sp"
+        android:layout_gravity="center"
+        android:layout_marginVertical="30dp"
+        android:visibility="gone"
+        android:text="Пока нет комментариев"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="wrap_content">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_comments"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"></androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+
+
+</LinearLayout>

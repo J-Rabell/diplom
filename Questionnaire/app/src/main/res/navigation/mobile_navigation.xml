@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_account"> <!--  Стартовая страница -->
+
+    <fragment
+        android:id="@+id/nav_account"
+        android:name="com.example.questionnaire_v3.ui.account.AccountFragment"
+        android:label="@string/menu_account"
+        tools:layout="@layout/fragment_account" >
+        <action
+            android:id="@+id/action_nav_account_to_nav_my_achievements"
+            app:destination="@id/nav_my_achievements" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_all_questions"
+        android:name="com.example.questionnaire_v3.ui.allQuestions.FragmentAllQuestions"
+        android:label="@string/menu_all_questions"
+        tools:layout="@layout/fragment_all_questions" >
+        <action
+            android:id="@+id/action_nav_all_questions_to_nav_selected_question"
+            app:destination="@id/nav_selected_question" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_my_questions"
+        android:name="com.example.questionnaire_v3.ui.myQuestions.FragmentMyQuestions"
+        android:label="@string/menu_my_questions"
+        tools:layout="@layout/fragment_my_questions" >
+        <action
+            android:id="@+id/action_nav_my_questions_to_nav_selected_question"
+            app:destination="@id/nav_selected_question" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_answered_questions"
+        android:name="com.example.questionnaire_v3.ui.answeredQuestions.FragmentAnsweredQuestions"
+        android:label="@string/menu_answered_questions"
+        tools:layout="@layout/fragment_answered_questions" >
+        <action
+            android:id="@+id/action_nav_answered_questions_to_nav_selected_question"
+            app:destination="@id/nav_selected_question" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_create_question"
+        android:name="com.example.questionnaire_v3.ui.creatingQuestion.CreatingQuestionFragment"
+        android:label="@string/menu_create_question"
+        tools:layout="@layout/fragment_creating_question" />
+    <fragment
+        android:id="@+id/nav_selected_question"
+        android:name="com.example.questionnaire_v3.ui.selectedQuestion.SelectedQuestionFragment"
+        android:label="Выбранный опрос"
+        tools:layout="@layout/fragment_selected_question">
+        <action
+            android:id="@+id/action_nav_selected_question_to_nav_comments"
+            app:destination="@id/nav_comments" />
+        <action
+            android:id="@+id/action_nav_selected_question_to_nav_analytics"
+            app:destination="@id/nav_analytics" />
+        <action
+            android:id="@+id/action_nav_selected_question_to_nav_edit_question"
+            app:destination="@id/nav_edit_question" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_comments"
+        android:name="com.example.questionnaire_v3.ui.commentaries.FragmentCommentaries"
+        android:label="Комментарии"
+        tools:layout="@layout/fragment_list_comments"/>
+    <fragment
+        android:id="@+id/nav_analytics"
+        android:name="com.example.questionnaire_v3.ui.analytics.FragmentAnalytics"
+        android:label="Статистика"
+        tools:layout="@layout/fragment_analytics"/>
+
+    <fragment
+        android:id="@+id/nav_my_achievements"
+        android:name="com.example.questionnaire_v3.ui.achievements.AchievementFragment"
+        android:label="Мои достижения"
+        tools:layout="@layout/fragment_item_achievement_list"/>
+
+    <fragment
+        android:id="@+id/nav_edit_question"
+        android:name="com.example.questionnaire_v3.ui.editQuestion.EditQuestionFragment"
+        android:label="Редактирование опроса"
+        tools:layout="@layout/fragment_edit_question"/>
+
+    <fragment
+        android:id="@+id/nav_list_user"
+        android:name="com.example.questionnaire_v3.ui.listUsers.FragmentListUsers"
+        android:label="Список пользователей"
+        tools:layout="@layout/fragment_list_users">
+        <action
+            android:id="@+id/action_nav_list_user_to_nav_account"
+            app:destination="@id/nav_account" />
+    </fragment>
+
+</navigation>

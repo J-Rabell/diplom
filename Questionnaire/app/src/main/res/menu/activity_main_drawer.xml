@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/ic_menu_account"
+            android:title="@string/menu_account" />
+        <item
+            android:id="@+id/nav_all_questions"
+            android:icon="@drawable/ic_menu_all_questions"
+            android:title="@string/menu_all_questions" />
+        <item
+            android:id="@+id/nav_my_questions"
+            android:icon="@drawable/ic_menu_my_question"
+            android:title="@string/menu_my_questions" />
+        <item
+            android:id="@+id/nav_answered_questions"
+            android:icon="@drawable/ic_menu_check"
+            android:title="@string/menu_answered_questions" />
+        <item
+            android:id="@+id/nav_create_question"
+            android:icon="@drawable/ic_menu_add"
+            android:title="@string/menu_create_question" />
+        <item
+            android:id="@+id/nav_list_user"
+            android:visible="false"
+            android:icon="@drawable/ic_menu_people"
+            android:title="@string/menu_list_users" />
+    </group>
+</menu>

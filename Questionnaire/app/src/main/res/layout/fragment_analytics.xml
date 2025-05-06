@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/drawable_background_gradient"
+    tools:context=".ui.analytics.FragmentAnalytics">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_corners_white">
+
+        <com.jjoe64.graphview.GraphView
+            android:layout_width="match_parent"
+            android:layout_height="200dip"
+            android:id="@+id/graph" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="8dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                android:text="Июнь"/>
+            <View
+                android:layout_width="match_parent"
+                android:background="@color/black"
+                android:layout_height="1dp" />
+            <TextView
+                android:id="@+id/legend_answer_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                android:text="Кошек"/>
+            <TextView
+                android:id="@+id/legend_answer_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                android:text="Собак"/>
+            <TextView
+                android:id="@+id/legend_answer_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                android:visibility="gone"
+                android:text="Осень"/>
+            <TextView
+                android:id="@+id/legend_answer_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                android:visibility="gone"
+                android:text="Весна"/>
+            <TextView
+                android:id="@+id/legend_answer_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                android:visibility="gone"
+                android:text="Все-равно какая пора года"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:background="@drawable/drawable_background_gradient"
+    android:id="@+id/fragment_list_achievements"
+
+    tools:context=".ui.commentaries.FragmentCommentaries">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:visibility="gone"
+        android:text="Пока нет достижений"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="6dp"
+            android:background="@drawable/rounded_corners_white"
+            android:visibility="visible"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="20dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_comment"
+                    android:background="@color/teal_200" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="8dp"
+
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="Первый комментарий!"
+                    android:ellipsize="end"
+                    android:maxLines="4"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:text="Оставьте свой первый комментарий"
+                    android:ellipsize="end"
+                    android:maxLines="4"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="12dp"
+                    android:textSize="12dp"
+                    android:text="Дата получения: 05.06.2023"
+                    android:ellipsize="end"
+                    android:maxLines="4"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!--///////////////////////////////////////////////////////-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="6dp"
+            android:background="@drawable/rounded_corners_white"
+            android:visibility="visible"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="20dp">
+                <ImageView
+                    android:id="@+id/achievement_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_menu_my_question"
+                    android:background="@color/teal_200" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="8dp"
+
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/achievement_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:text="Первый опрос!"
+                    android:ellipsize="end"
+                    android:maxLines="4"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/achievement_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14dp"
+                    android:text="Создайте свой первый опрос"
+                    android:ellipsize="end"
+                    android:maxLines="4"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:id="@+id/achievement_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="12dp"
+                    android:textSize="12dp"
+                    android:text="Дата получения: 05.06.2023"
+                    android:ellipsize="end"
+                    android:maxLines="4"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+       <!-- <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_achievements"
+
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"></androidx.recyclerview.widget.RecyclerView> -->
+    </LinearLayout>
+
+
+</LinearLayout>
